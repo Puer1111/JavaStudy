@@ -1,0 +1,12 @@
+Method , Field 접근 제어자
+
+Public : 상속 , 외부패키지 , 같은 패키지 전부 가능 .
+Protected : 같은 패키지 , 상속
+Default : 같은 패키지에서만 가능
+Private : 해당 클래스 내부에서만 가능
+
+Class 접근 제어자
+
+public 과 default만 사용 가능
+
+public 은 파일명과 이름이 같아야함. 클래스 안에 여러 클래스 만들 수 있지만 이름이 같아야하는 규칙 때문에 나머지는 전부 default.
