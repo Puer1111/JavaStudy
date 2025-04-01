@@ -1,0 +1,7 @@
+**다형성**
+하나의 객체가 여러 타입의 객체로 취급 될 수 있는 능력.
+
+**다형적 참조**
+Parent : parentMethod();
+child : childMethod();
+

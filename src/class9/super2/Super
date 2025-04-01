@@ -1,0 +1,8 @@
+상속 시 자식은 부모의 생성자를 super()를 통해 반드시 호출 해야한다. 단, 부모가 기본생성자 시 생략 가능.
+
+최상위 부모 : ClassA - public Class ClassA(){}
+1차 자식: ClassB - public class ClassB(int a){ super();}
+2차 자식: ClassC - public class ClassC(){super(1);}    classB의 생성자에는 매개변수가 있기에 1이 들어간다.
+
+컴파일: ClassC 인스턴스 생성 및 ClassC 생성자 호출 -> 생성자 내에 있는 super()실행 -> ClassB 생성자 호출 및 실행 -> classB의 super() 호출
+--> ClassA 생성자 실행. --> Class B 생성자 나머지 실행 --> ClassC 생성자 나머지 실행
