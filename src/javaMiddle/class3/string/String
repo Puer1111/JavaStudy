@@ -1,0 +1,51 @@
+**String
+int , double 이런 기본형들과 다르게 시작이 대문자인 String은 참조형이자 클래스이다
+따라서 객체를 생성할수 있다.
+흔히 쓰는 String str = "hello"; 는 사실 String str = new String("hello"); 의 형태이지만 자바의 편의기능 덕에 자동변환해준다.
+
+**기능
+length():문자열의 길이를 반환한다.
+charAt(int index) 특정 인덱스의 문자를 반환한다.
+subString(int beginIndex, int endIndex): 문자열의 부분 문자열을 반환한다.
+indexOf(String str): 특정 무자열이 시작되는 인덱스를 반환한다.
+toLowerCase() , toUpperCase() : 대문자 소문자로 변환한다.
+trim(): 문자열 양 끝의 공백을 제거한다.
+concat(String str): 문자열을 더한다.
+
+String 은 참조형이기에 참조값만 표시하므로 원칙적으로 + 를 사용할 수 없다.
+그러나 문자열의 경우 너무 자주 사용되서 자바에서는 + 연산을 허용함.
+
+String 의 기능중 StringSequence가 들어가는 기능들이 있다 이는 Stirng , StringBuilder 보다 상위의 개념이다.
+
+**단점
+
+불변인 만큼 문자를 더할 때 계속 인스턴스가 생성되어 컴퓨터 메모리에 영향을 많이 끼친다.
+--> 가변 String 사용 해야함. : StringBuilder
+
+
+------------------------------------------------------------------------------------------------------------------------------
+**StringBuilder
+가변의 String 으로 불변에서의 단점을 커버한다.
+
+**기능
+insert(startIndex,String str): 몇번쨰에 대입
+delete(startIndex,endIndex) : 몇부터 몇까지 삭제
+reverse(): 반대로 출력
+------------------------------------------------------------------------------------------------------------------------------
+
+**String 최적화
+문자열 끼리의 더하기의 경우 자바가 자동으로 편리하게 지원한다.
+String str1 = "Hello";
+String str2 = "World";
+--> new StringBuilder().append(str1).append(str2).toString();
+
+※ 반복문에서의 최적화
+위와 같은 최적화를 실행할 때 String 을 사용하게 되면 반복하는 수만큼 String 객체가 생성되기에 엄청난 자원소모와 컴파일 과부화가 있다.
+
+StringBuilder 를 통한 최적화가 더 좋은 경우 ->
+1.반복문에서 많이 반복해서 문자 연결시
+2.조건문을 통한 동적 문자열 조합 시
+3.복잡한 문자열의 특정 부분을 변경할 시
+4.매우 긴 대용량 문자열을 다룰 시.
+
+
