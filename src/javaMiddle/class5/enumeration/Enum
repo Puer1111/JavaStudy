@@ -1,0 +1,22 @@
+**열거형
+
+어떤 항목을 나열하는 것을 뜻한다.
+나열한 항목에 대해서만 사용이 가능하다.
+
+class 대신에 enum 을 붙혀 생성한다
+
+public enum Grade extends Enum{
+    BASIC, GOLD ,DIAMOND;
+}
+
+열거형도 클래스이며,  외부에서 생성할 수 없다.
+자동으로 Enum 을 상속받는다
+
+** 주요 메소드
+values() : 모든 Enum 상수 포함 배열로 반환
+valueOf(String name) : 주어진 이름과 일치한 Enum 상수 반환
+name(): Enum 상수의 이름을 문자열로 반환.
+ordinal(): Enum 상수의 선언 순서 반환
+toString(): Enum 상수의 이름 문자열로 반환 name과 다르게 오버라이딩 가능
+
+※Ordinal 은 가급적 쓰지 않는게 좋다. 순서 변경 시 해당 DB 꼬일 수 있음.
