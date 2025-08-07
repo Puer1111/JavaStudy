@@ -13,7 +13,7 @@ O : OCP (Open Closed Principle) 개방 - 폐쇄 원칙
     MemberService 가 구현 클래스를 선택
     - MemberRepository m = new MemoryMemberRepository();            => DIP 위반
     - MemberRepository m = new JDBCMemberRepository();              => DIP 위반
-※해결법 객체를 생성하고 , 연관관계를 맺어주는 별도의 조립 , 설정자가 필요하다. --> Spring 의 Autowired? IOC 에 의해 관리 됨.
+※해결법 객체를 생성하고 , 연관관계를 맺어주는 별도의 조립 , 설정자가 필요하다.
 
 L : LSP (Liskov substitution principle) 리스코프 치환 원칙
 - 프로그램의 객체는 프로그램의 정확성을 깨트리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야한다.
