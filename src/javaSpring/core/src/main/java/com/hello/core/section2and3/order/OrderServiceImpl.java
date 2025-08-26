@@ -1,5 +1,6 @@
 package com.hello.core.section2and3.order;
 
+import com.hello.core.annotation.MainDiscountPolicy;
 import com.hello.core.section2and3.discount.DiscountPolicy;
 import com.hello.core.section2and3.discount.FixdiscountPolicy;
 import com.hello.core.section2and3.discount.RateDiscountPolicy;
@@ -17,8 +18,15 @@ public class OrderServiceImpl implements OrderService {
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     private final DiscountPolicy discountPolicy;
-    @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) { // 생성자 주입 방식 - 위에 주석은 Service가 직접 Repository 의 역할에 관여한 문제가 있었음.
+
+//    @Autowired            // section7 : 만약 조회하는 빈이 2개 이상이라면 ? -> DiscountPolicy : FixDiscount , RateDiscount
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) { // 생성자 주입 방식 - 위에 주석은 Service가 직접 Repository 의 역할에 관여한 문제가 있었음.
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
+
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) { // section7 : 직접 어노테이션을 생성해서 DiscountPolicy 의 여러개 의 Bean 중 하나를 확실히 선언한다.
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
