@@ -27,7 +27,7 @@
 # 자동과 수동의 운영 기준
 - 자동을 선호하는 추세이긴하다
 - @Component 보다 @Controller,@Service,@Repository 로 쓴다
-- Spring boot 의 등장으로 ComponentScan을 기본으로 사용한다.
+- Spring boot 의 등장으로 ComponentScan 을 기본으로 사용한다.
 
 ## 수동을 그럼 언제 쓸까?
 - 로직을 크게 업무와 기술지원 으로 나눌 수 있다
