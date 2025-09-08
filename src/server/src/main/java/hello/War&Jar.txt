@@ -1,0 +1,15 @@
+Jar : Java Archive 줄임말
+JVM 위에서 실행되거나 다른 곳에서 사용하는 라이브러리
+main() 필요하고 MANIFEST.MF 파일에 실행할 메인 메서드가 존재하는 클래스 지정해야한다.
+
+War : Web Application Archive
+Jar 는 JVM 위에서 실행 되지만 War 는 웹 애플리케이션 서버 위에서 실행된다.
+구조는 반드시 'Web-INF' -> 'classes' -> 'lib' -> 'web.xml' 순이다.
+
+인텔리제이 내장 Tomcat : run -> edit configuration -> + 에서 TomCat Local 추가 -> war(exploded) 설정 후 실행
+
+War 단점:
+- 톰캣 별도 설치 (버전 변경 시 재 설치)
+- 애플리케이션 코드 War 로 빌드
+- War 파일 WAS 배포
+- 개발 환경 설정 복잡 (WAS 실행 후 WAR 연동 위한 설정 추가)
