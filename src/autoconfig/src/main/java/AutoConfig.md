@@ -3,7 +3,7 @@
 - Configuration 을 통한 Bean 설정 
 - 다른 패키지에 있는 클래스도 등록해서 사용이 가능
 - BUT, 항상 메모리를 사용하지 않고 특정 조건때만 활성화가 필요
-
+- 주의: AutoConfiguration 파일에 ComponentScan 을 쓰면 안된다.
 
 # @Conditional 
 - 특정 상황에만 특정 빈들을 등록해서 사용하게 도와준다. 
@@ -37,6 +37,9 @@
   - 1. @import('클래스')  --> 정적
   - 2. @import('ImportSelector') --> 동적
 - test/selector/ImportSelectorTest.class 확인
+
+# 자동 구성, 언제 써야 할까?
+- 라이브러리를 만들어서 제공 할 때 사용
 
 
 ### AutoConfig 프로젝트 :  project-v1 , project-v2, memory-v1 , memory-v2 프로젝트 
